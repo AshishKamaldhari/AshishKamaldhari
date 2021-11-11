@@ -32,10 +32,10 @@
 			<h4>Choose when your sign up should go live / be published</h4>
 		</div>
 		<div class="pto-sign-up-compelling-live_published_details">
-			<input type="radio" name="immediately_publish" class="publish_checked" checked>		
+			<input type="radio" name="publish_date" class="publish_checked" value="immediately_publish" checked>		
 			<label>Open my sign up immediately after I click PUBLISH</label>
 			<br>
-			<input type="radio" name="immediately_publish">		
+			<input type="radio" name="publish_date" value="specifc_publish" class="publish_checked">		
 			<label>Open my sign up at a specifc day and time after I click PUBLISH</label>
 			<div class="specific-timezone-pto" style="display:none">
 				<div class="open-time-zone">

@@ -33,6 +33,7 @@ include_once( 'constant.php' );
 include_once( 'includes/class-ptoffice.php' );
 include_once( 'includes/pto-cptcreate.php' );
 include_once( 'includes/pto_signups_cpts/cpt_sign_ups_cpt.php' );
+include_once( 'includes/pto_task_slots_cpts/pto-task-slots-cpt.php' );
 
 /* 
 Declare Classes
@@ -40,12 +41,14 @@ Declare Classes
 use ptofficesignup\classes\Ptoffice;
 use ptofficesignup\classes\CptCreate;
 use ptofficesignup\classes\PtoSignUp;
+use ptofficesignup\classes\PtOTaskSlots;
 
 
 
 new Ptoffice();
 new CptCreate();
 new PtoSignUp();
+new PtOTaskSlots();
 
 
 

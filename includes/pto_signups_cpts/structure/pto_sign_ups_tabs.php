@@ -21,15 +21,18 @@
             <?php include "pto_sign_ups_tabs_one.php"; ?>
          </div>
          
-         <div class="col-md-6">
-               <button class="btn btn-primary nextBtn btn-lg " type="button">Next</button>
+         <div class="col-md-12">
+               <button class="nextBtn" type="button">Next</button>
          </div>
       </div>
       <div class="row setup-content" id="step-2" style="display: none;">
          <div class="col-md-6">
             <div class="col-md-12">
-               <button id="next" class="btn btn-primary  nextBtn  btn-lg " type="button">next</button>
-               <button id="prev" class="btn btn-primary prev btn-lg " type="button">Prev</button>
+                    <?php include "pto_sign_ups_tabs_two.php"; ?>
+            </div>
+             <div class="col-md-12">
+               <button id="next" class="nextBtn" type="button">next</button>
+               <button id="prev" class="prev" type="button">Prev</button>
             </div>
          </div>
       </div>
@@ -37,7 +40,7 @@
          <div class="col-md-6">
             <div class="col-md-12">
                
-               <button id="prev" class="btn btn-primary prev btn-lg " type="button">Prev</button>
+               <button id="prev" class="prev" type="button">Prev</button>
 
             </div>
          </div>

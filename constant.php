@@ -10,7 +10,7 @@
 /*
  * Plugin name to show
  */
-define( "MYPL_NAME_SIGNUP", "ptoffice" );
+define( "PLUGIN_DIR", plugin_dir_url( __FILE__ ) );
 
 
 

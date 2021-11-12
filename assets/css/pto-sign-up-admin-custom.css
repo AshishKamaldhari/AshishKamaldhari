@@ -85,7 +85,19 @@ div#step-1 {
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+.pto-signup-custom-fileds-header {
+    display: flex;
+    justify-content: space-between;
+}
 
+ul.pto-signup-custom-fileds-ul li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pto-signup-custom-fileds-header DIV {
+    FONT-WEIGHT: bold;
+}
 
 
 

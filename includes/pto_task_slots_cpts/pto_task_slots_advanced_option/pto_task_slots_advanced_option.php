@@ -29,7 +29,7 @@
 			</div>
 
 			<div class="pto-signup-task-slots-volunteers-hours-point">
-				<input type="checkbox" name="pto_sign_ups_hours_point" onclick="$( '#pto-sign-ups_volunteer' ).toggle('show');">
+				<input type="checkbox" name="pto_sign_ups_hours_point" onclick="jQuery( '#pto-sign-ups_volunteer' ).toggle('show');">
 				<label>I want to track/credit volunteers with hours or points when they sign up to this task/slot</label>
 				<i class="fa fa-info-circle" aria-hidden="true"></i>
 				<br>
@@ -41,12 +41,13 @@
 
 
 			<div class="pto-signup-task-slots-volunteers-custom-fileds">
-				<input type="checkbox" name="pto_sign_ups_custom_fileds" onclick="$( '#pto-sign-ups_custom-fileds' ).toggle('show');">
+				<input type="checkbox" name="pto_sign_ups_custom_fileds" onclick="jQuery( '#pto-sign-ups_custom-fileds' ).toggle('show');">
 				<label>I want to collect custom felds for this task/slot</label>
+				<input type="button" name="add_new" value="Add New" onclick="jQuery('#task-custom-fileds').addClass('pto-modal-open');">
 				<i class="fa fa-info-circle" aria-hidden="true"></i>
 				<br>
 				<div class="pto-sign-ups_volunteer" id="pto-sign-ups_custom-fileds" style="display:none">
-					
+					<?php include "pto_custom_fileds.php"; ?>
 				</div>
 			</div>
 		</div>

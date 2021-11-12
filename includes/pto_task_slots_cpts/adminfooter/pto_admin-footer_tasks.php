@@ -95,3 +95,58 @@
               </div>
             </div>
           </div>
+
+
+
+            <div id="task-custom-fileds" class="pto-modal">
+            <div class="pto-modal-content">
+                <div class="pto-modal-container-header">
+                    <span>Task Recurrence</span>
+                <span onclick="jQuery('#task-recurrence').removeClass('pto-modal-open');" class="w3-button w3-display-topright">&times;</span>
+                </div>
+              <div class="pto-modal-container">
+                <?php
+                        $args = array(
+                            'post_type' => 'pto-custom-fields',
+                            // Several more arguments could go here. Last one without a comma.
+                        );
+                        // Query the posts:
+                        $pto_custom_fields = new WP_Query($args);
+                        ?>
+
+                         <div class="pto-signup-custom-fileds">
+                                   <div class="pto-signup-custom-fileds-header">
+                                       <div class="pto-signup-custom-fileds-title">Field Name</div>
+                                       <div class="pto-signup-custom-fileds-title">Alternate Title</div>
+                                       <div class="pto-signup-custom-fileds-title">Type</div>
+                                       <div class="pto-signup-custom-fileds-title">Required</div>
+                                   </div> 
+                                   <ul class="pto-signup-custom-fileds-ul">
+                                   <?php
+                                    while ($pto_custom_fields->have_posts()) : $pto_custom_fields->the_post();
+                                        $title = get_the_title();
+                                        $id = get_the_ID();
+                                        $alternet_title = get_post_meta($id,"pto_alternate_title",true);
+                                        $instruction = get_post_meta($id,"instruction",true);
+                                        $type = get_post_meta($id,"pto_field_type",true);
+                                        $require = get_post_meta($id,"pto_field_required",true);
+                                        ?>
+                                       
+                                                   <li>
+                                                       <div class="pto-signup-custom-fileds-ul-li_div"><?php echo $title; ?></div>
+                                                       <div class="pto-signup-custom-fileds-ul-li_div"><?php echo $alternet_title; ?></div>
+                                                       <div class="pto-signup-custom-fileds-ul-li_div"><?php echo $type; ?></div>
+                                                       <div class="pto-signup-custom-fileds-ul-li_div"><?php echo $require; ?></div>
+                                                   </li>
+                                         <?php
+                                    endwhile;
+                                    ?>
+                                    </ul>
+                </div>
+              </div>
+              <div class="pto-modal-footer">
+                <input type="button" name="ok" value="submit" class="add_new outline_btn" onclick="jQuery('#task-recurrence').removeClass('pto-modal-open');">
+                <input type="button" name="cancel" value="Cancel" class="add_new outline_btn" onclick="jQuery('#task-recurrence').removeClass('pto-modal-open');">
+              </div>
+            </div>
+          </div>

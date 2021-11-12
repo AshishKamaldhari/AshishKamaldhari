@@ -43,7 +43,7 @@ use ptofficesignup\classes\Ptoffice;
 use ptofficesignup\classes\CptCreate;
 use ptofficesignup\classes\PtoSignUp;
 use ptofficesignup\classes\PtOTaskSlots;
-use ptofficesignup\classes\PtoAdvancedFiledCpt;
+use ptofficesignup\classes\PtoAdvancedfieldCpt;
 
 
 
@@ -52,7 +52,7 @@ new Ptoffice();
 new CptCreate();
 new PtoSignUp();
 new PtOTaskSlots();
-new PtoAdvancedFiledCpt();
+new PtoAdvancedfieldCpt();
 
 
 

@@ -74,6 +74,7 @@ jQuery(document).on("click",".open-recurrence-popup",function(){
   jQuery("#task-recurrence").addClass("pto-modal-open");
 })
 
+/* advanced option hide show */
 jQuery(document).on("click",".advanced_option",function(){
   let advance_option = jQuery(this).val();
   if(advance_option == "single")
@@ -86,3 +87,50 @@ jQuery(document).on("click",".advanced_option",function(){
     jQuery("#advanced-option-radio-shift").show();
   }
 })
+
+
+/* custom filed optionfiled hide show */
+jQuery("#pto_field_type").change(function(){
+     jQuery("#multiple_append_field").hide();
+      jQuery("#multiples_button_add").hide();
+      jQuery("#multiple_append_field").html("");
+    let pto_filed_value = jQuery(this).val();
+    if(pto_filed_value == "checkbox" || pto_filed_value == "radio" || pto_filed_value == "drop-down"){
+      let html = '<div class="pto_multipalfiled"><input type="text" required name="custom-filed-key[]" placeholder="Enter Key">&nbsp;&nbsp;&nbsp;<input type="text" required name="custom-filed-value[]" placeholder="Enter value"></div>';
+      jQuery("#multiple_append_field").show();
+      jQuery("#multiples_button_add").show();
+       jQuery("#multiple_append_field").append(html);
+       jQuery("#selected_value_field").val(pto_filed_value);
+    }else{
+      jQuery("#multiple_append_field").hide();
+      jQuery("#multiples_button_add").hide();
+      jQuery("#multiple_append_field").html("");
+      jQuery("#selected_value_field").val("");
+    }
+})
+
+function custom_filed_add_in_field(){
+     let html = '<div class="pto_multipalfiled"><input type="text" required name="custom-filed-key[]" placeholder="Enter Key">&nbsp;&nbsp;&nbsp;<input type="text" required name="custom-filed-value[]" placeholder="Enter value"><input type="button" name="remove_filed" value="remove" onclick="jQuery(this).parent().remove();remove_last_one();"></div>';
+     jQuery("#multiple_append_field").append(html);
+
+     let i = 0;
+     jQuery(".pto_multipalfiled").each(function(){
+      i++;
+     })
+     if(i > 1){
+      jQuery("#remove_filed").show();
+     }else{
+      jQuery("#remove_filed").hide();
+     }
+}
+function remove_last_one(){
+    let i = 0;
+     jQuery(".pto_multipalfiled").each(function(){
+      i++;
+     })
+     if(i > 1){
+      jQuery("#remove_filed").show();
+     }else{
+      jQuery("#remove_filed").hide();
+     }
+}

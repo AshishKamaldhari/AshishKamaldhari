@@ -59,11 +59,30 @@ jQuery(document).on("click",".publish_checked",function(){
     }
 })
 
+/* occurence days set */
 jQuery(document).on("click",".occurrence-options",function(){
   let occurrence_value = jQuery(this).val();
   if(occurrence_value == "occurrence-specific"){
     jQuery(".pto-signup-specific-days").show();
   }else{
     jQuery(".pto-signup-specific-days").hide();
+  }
+})
+
+/* reecurring modal open */
+jQuery(document).on("click",".open-recurrence-popup",function(){
+  jQuery("#task-recurrence").addClass("pto-modal-open");
+})
+
+jQuery(document).on("click",".advanced_option",function(){
+  let advance_option = jQuery(this).val();
+  if(advance_option == "single")
+  {
+    jQuery("#advanced-option-radio-single").show();
+    jQuery("#advanced-option-radio-shift").hide();
+  }else if(advance_option == "shift")
+  {
+    jQuery("#advanced-option-radio-single").hide();
+    jQuery("#advanced-option-radio-shift").show();
   }
 })

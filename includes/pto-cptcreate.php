@@ -18,10 +18,13 @@ class CptCreate
     {
         $this->init();
     }
+    
     /**
      * Initiating necessary functions
      */
-    function init()
+    public function init()
     {
+        
     }
+    
 }

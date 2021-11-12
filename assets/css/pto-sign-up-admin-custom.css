@@ -85,3 +85,93 @@ div#step-1 {
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+
+
+
+
+/*START COMMON MODAL CSS CODE*/
+ :root{
+        --primary: #222f3e;
+        --white: #fff;
+        --black: #000;
+        --f12: 12px;
+    }
+    .pto-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #222f3ecf;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease;
+    }
+    .pto-modal-open.pto-modal {
+        z-index: 9999;
+        opacity: 1;
+        visibility: visible;
+    }
+    .pto-modal .pto-modal-content {
+        max-width: 800px;
+        margin: 0 auto;
+        border: 1px solid #fff;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .pto-modal-container-header {
+        background-color: var(--white);
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .pto-modal-container-header span {
+        font-size: var(--f12);
+        text-transform: capitalize;
+        font-weight: 700;
+    }
+    .pto-modal-container {
+        padding: 10px;
+        background-color: #ffffffa8;
+    }
+    .pto-modal-container input[type="text"],.pto-modal-container input[type="email"],.pto-modal-container input[type="password"] {
+        width: 100%;
+        height: 40px;
+    }
+    .pto-modal-footer {
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        background-color: #ffffff;
+    }
+    .pto_data {
+        display: flex;
+    }
+    .pto-update-status-detail {
+        width: 45%;
+        margin: 4px 0;
+    }
+
+    .pto-update-status {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 5px 0;
+    }
+
+    .pto-update-status-detail label,.pto-add-new-status label {
+        padding-left: 5px !important;
+        font-weight: bold;
+    }
+    span.attechment_name {
+        width: 100%;
+    }
+
+    .all_attechments {
+        display: grid;
+    }
+/*END COMMON MODAL CSS CODE*/

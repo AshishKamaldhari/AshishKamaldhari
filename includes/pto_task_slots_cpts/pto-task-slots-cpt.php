@@ -23,12 +23,18 @@ class PtOTaskSlots
      */
     function init()
     {
-         /* Task management cpt */
+         /* Task slots management cpt */
         add_action('init', array($this,'task_manage_post_type'));
-          add_action('init', array(
-            $this,
-            'pto_task_custom_taxonomy'
-        ) , 0);
+
+        /* Task slots management texonomy */
+        add_action('init', array($this,'pto_task_custom_taxonomy') , 0);
+
+        /* task sloats in all meta boxes */
+        add_action( 'add_meta_boxes', array($this,'pto_signups_taskslots_meta_boxes') );
+
+        /* popups design for admin */
+        add_action('admin_footer', array($this , 'my_admin_footer_function_popups')); 
+
     }
     /* 
     Tsk Cpt Create
@@ -91,6 +97,9 @@ class PtOTaskSlots
         register_post_type('Tasks', $args);
     }
 
+    /*
+        texonomy create tasks cpts
+    */
     function pto_task_custom_taxonomy()
     {
 
@@ -122,4 +131,43 @@ class PtOTaskSlots
         ));
     }
 
+    /*
+        add meta boxes from tasks cpts
+    */
+    public function pto_signups_taskslots_meta_boxes(){
+        add_meta_box(
+            'tasks-description-signups',
+            __( 'Add a compelling description', 'sitepoint' ),
+           array($this,'pto_sign_ups_desc') , // $callback
+            'tasks'
+        );
+        add_meta_box(
+            'tasks-advanced-option-signups',
+            __( 'Add a compelling description', 'sitepoint' ),
+           array($this,'pto_sign_advanced_option') , // $callback
+            'tasks'
+        );
+    }
+
+    /* 
+         task cpt in descreption tab add 
+    */
+    public function pto_sign_ups_desc(){
+        $content = "";
+        wp_editor($content, 'tasks_comp_desc', $settings = array(
+            'textarea_name' => 'tasks_comp_desc',
+            'textarea_rows' => 5
+        ));
+          
+    }
+
+    /* 
+         task recurring footer 
+    */
+    public function my_admin_footer_function_popups(){
+          include "adminfooter/pto_admin-footer_tasks.php";
+    }
+    public function pto_sign_advanced_option(){
+        include "pto_task_slots_advanced_option/pto_task_slots_advanced_option.php";    
+    }
 }

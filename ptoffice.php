@@ -34,6 +34,7 @@ include_once( 'includes/class-ptoffice.php' );
 include_once( 'includes/pto-cptcreate.php' );
 include_once( 'includes/pto_signups_cpts/cpt_sign_ups_cpt.php' );
 include_once( 'includes/pto_task_slots_cpts/pto-task-slots-cpt.php' );
+include_once( 'includes/pto_advance_custom_filed/pto_advanced_custom_fileds_cpts.php' );
 
 /* 
 Declare Classes
@@ -42,6 +43,8 @@ use ptofficesignup\classes\Ptoffice;
 use ptofficesignup\classes\CptCreate;
 use ptofficesignup\classes\PtoSignUp;
 use ptofficesignup\classes\PtOTaskSlots;
+use ptofficesignup\classes\PtoAdvancedFiledCpt;
+
 
 
 
@@ -49,7 +52,7 @@ new Ptoffice();
 new CptCreate();
 new PtoSignUp();
 new PtOTaskSlots();
-
+new PtoAdvancedFiledCpt();
 
 
 

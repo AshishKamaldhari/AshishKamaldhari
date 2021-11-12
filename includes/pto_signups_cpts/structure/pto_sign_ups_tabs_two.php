@@ -17,7 +17,7 @@
 			</div>
 			<div class="pto-sign-up-compelling-occurrence-input">
 				<input type="radio" name="pto-radios-occurrence" value="occurrence-multipal-days" class="occurrence-options">
-				<label>This sign up repeats on multiple days</label>&nbsp;&nbsp;&nbsp;<span>SET RECURRENCE</span>
+				<label>This sign up repeats on multiple days</label>&nbsp;&nbsp;&nbsp;<span><a href="javascript:void(0)" class="open-recurrence-popup">SET RECURRENCE</a></span>
 			</div>
 		</div>
 	</div>
